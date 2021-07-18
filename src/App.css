@@ -1,0 +1,62 @@
+/* GLOBAL RULES */
+
+/* 1rem = 10px */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  width: 128rem;
+  margin: 0 auto;
+}
+/* ------------------------------------------------ */
+
+/* HEADER */
+
+header {
+  height: 12rem;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cursor {
+  border: solid 0.1rem red;
+  height: 1rem;
+  width: 5rem;
+}
+
+.logo-img {
+  height: 4rem;
+}
+
+/* ------------------------------------------------- */
+
+/* HEADBAND */
+
+.headBand-img {
+  height: 45.5rem;
+  width: 100%;
+  background-image: url(/src/assets/img/headband.jpg);
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+}
+
+.headband-sold {
+  height: 22rem;
+  width: 36rem;
+  position: absolute;
+  top: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.1rem red;
+}
