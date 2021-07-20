@@ -60,3 +60,28 @@ header .container {
   flex-direction: column;
   border: solid 0.1rem red;
 }
+
+/* ------------------------------------------------- */
+
+/* MAIN */
+
+main {
+  width: 128rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  width: 23.5rem;
+}
+
+.card-img {
+  height: 36rem;
+  width: 23.5rem;
+  object-fit: cover;
+}
+
+.card-infos {
+  display: flex;
+  flex-direction: column;
+}
