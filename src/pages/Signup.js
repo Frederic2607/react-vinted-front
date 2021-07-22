@@ -76,6 +76,11 @@ const Signup = () => {
           />
           <input type="checkbox" />
           <span>S'inscrire à notre newslettre</span>
+          <p>
+            En m'inscrivant je confirme avoir lu et accepté les Termes &
+            Conditions et Politique de Confidentialité de Vinted. Je confirme
+            avoir au moins 18 ans.
+          </p>
           <input type="submit" value="S'inscrire"></input>
         </form>
       </div>
