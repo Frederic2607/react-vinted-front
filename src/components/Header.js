@@ -1,5 +1,6 @@
 import React from "react";
 import logoVinted from "../assets/img/logo-vinted.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -26,8 +27,12 @@ const Header = () => {
           </div>
         </div>
         <div>
-          <button className="signUp-btn">S'inscrire</button>
-          <button className="login-btn">Se connecter</button>
+          <Link to="/signup">
+            <button className="signUp-btn">S'inscrire</button>
+          </Link>
+          <Link to="/login">
+            <button className="login-btn">Se connecter</button>
+          </Link>
         </div>
         <button className="sold-btn">Vends tes articles</button>
       </div>

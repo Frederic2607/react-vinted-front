@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Header from "./components/Header";
 import Headband from "./components/Headband";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -14,8 +15,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/offer">
+        <Route path="/offer/:id">
           <Offer />
+        </Route>
+        <Route path="/signup">
+          <Signup />
         </Route>
       </Switch>
     </Router>

@@ -23,7 +23,7 @@ const Home = () => {
   ) : (
     <main className="container">
       {offers.map((offer, index) => (
-        <Link to={`/offer/${offer._id}`} key={offers._id}>
+        <Link to={`/offer/${offer._id}`} key={index}>
           <div>
             <div className="card-container">
               <div className="card-username">
