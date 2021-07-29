@@ -2,12 +2,16 @@ import React from "react";
 import logoVinted from "../assets/img/logo-vinted.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+  const { token, handleLogout } = props;
+
   return (
     <header>
       <div className="container">
         <div className="logo">
-          <img className="logo-img" src={logoVinted} alt="logo-vinted" />
+          <Link to="/">
+            <img className="logo-img" src={logoVinted} alt="logo-vinted" />
+          </Link>
         </div>
         <div className="search-content">
           <input
@@ -30,9 +34,15 @@ const Header = () => {
           <Link to="/signup">
             <button className="signUp-btn">S'inscrire</button>
           </Link>
-          <Link to="/login">
-            <button className="login-btn">Se connecter</button>
-          </Link>
+          {token ? (
+            <div>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="login-btn">Se connecter</button>
+            </Link>
+          )}
         </div>
         <button className="sold-btn">Vends tes articles</button>
       </div>

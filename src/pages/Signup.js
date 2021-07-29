@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Signup = () => {
+const Signup = (props) => {
+  const { handleLogin } = props;
+
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState({});
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        {
-          email: `${email}`,
-          username: `${username}`,
-          phone: `${phone}`,
-          password: `${password}`,
-        }
-      );
-      console.log(response.data);
-    };
-    fetchData();
-  }, [data]);
 
   const handleUsername = (event) => {
     setUsername(event.target.value);
@@ -40,8 +28,32 @@ const Signup = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = async (event) => {
+    if (!email) {
+      setEmailError("Mandatory email");
+    }
+    try {
+      event.preventDefault();
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          email: `${email}`,
+          username: `${username}`,
+          phone: `${phone}`,
+          password: `${password}`,
+        }
+      );
+      if (response.data.token) {
+        handleLogin(response.data.token);
+      } else {
+        alert("An error has occured");
+      }
+    } catch (error) {
+      if (error.response.status === 409) {
+        alert(error.response.data.message);
+      }
+    }
+
     setData(data);
   };
 
@@ -83,6 +95,7 @@ const Signup = () => {
           </p>
           <input type="submit" value="S'inscrire"></input>
         </form>
+        <Link to="/">Tu as déjà un compte ? Connecte-toi !</Link>
       </div>
     </div>
   );
