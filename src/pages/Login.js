@@ -1,4 +1,4 @@
-import axios from "react";
+import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -22,20 +22,18 @@ const Login = (props) => {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
         {
-          email: email,
-          password: password,
+          email: `${email}`,
+          password: `${password}`,
         }
       );
-
       if (response.data.token) {
-        console.log(response.data);
         handleLogin(response.data.token);
         return history.push("/");
       } else {
         alert("Une erreur est survenue, veuillez ressayer");
       }
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 
