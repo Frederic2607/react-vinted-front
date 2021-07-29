@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Signup = (props) => {
   const { handleLogin } = props;
-
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [username, setUsername] = useState("");
@@ -45,6 +46,7 @@ const Signup = (props) => {
       );
       if (response.data.token) {
         handleLogin(response.data.token);
+        return history.push("/");
       } else {
         alert("An error has occured");
       }

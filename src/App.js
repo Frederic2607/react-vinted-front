@@ -18,18 +18,17 @@ function App() {
   };
 
   const handleLogout = () => {
-    Cookies.set("token");
+    Cookies.remove("token");
     setToken("");
   };
 
   return (
     <Router>
       <Header token={token} handleLogout={handleLogout} />
-
       <Switch>
         <Route exact path="/">
-          <Home />
           <Headband />
+          <Home />
         </Route>
         <Route path="/offer/:id">
           <Offer />

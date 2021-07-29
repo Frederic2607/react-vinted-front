@@ -28,12 +28,15 @@ const Login = (props) => {
       );
 
       if (response.data.token) {
+        console.log(response.data);
         handleLogin(response.data.token);
         return history.push("/");
       } else {
         alert("Une erreur est survenue, veuillez ressayer");
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (
@@ -46,7 +49,7 @@ const Login = (props) => {
           onChange={handlePassword}
           placeholder="password"
         />
-        <button type="submit">Login</button>
+        <input type="submit" value="Se Connecter"></input>
       </form>
     </div>
   );
