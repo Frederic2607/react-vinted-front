@@ -1,9 +1,10 @@
 import React from "react";
 import logoVinted from "../assets/img/logo-vinted.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  const { token, handleLogout } = props;
+  const { token, handleLogout, search, handleSearch } = props;
 
   return (
     <header>
@@ -14,31 +15,30 @@ const Header = (props) => {
           </Link>
         </div>
         <div className="search-content">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Rechercher des articles"
-          />
-          <div>
-            <div>
-              <span>Trier par prix : </span>
-              <span>
-                <input type="text" />
-              </span>
-              <span>Prix entre : </span>
-              <div className="cursor"></div>
-            </div>
-          </div>
+          <label className="search-bar">
+            <FontAwesomeIcon icon="search" size="2x" className="search-icon" />
+            <input
+              type="text"
+              className="search-input"
+              value={search}
+              onChange={handleSearch}
+              placeholder="Rechercher des articles"
+            />
+          </label>
         </div>
         <div>
           {token ? (
             <div>
-              <button onClick={handleLogout}>Logout</button>
+              <Link to="/">
+                <button className="logout-btn" onClick={handleLogout}>
+                  Se déconnecter
+                </button>
+              </Link>
             </div>
           ) : (
             <div>
               <Link to="/signup">
-                <button className="signUp-btn">S'inscrire</button>
+                <button className="signup-btn">S'inscrire</button>
               </Link>
               <Link to="/login">
                 <button className="login-btn">Se connecter</button>
@@ -46,7 +46,9 @@ const Header = (props) => {
             </div>
           )}
         </div>
-        <button className="sold-btn">Vends tes articles</button>
+        <Link to="/publish">
+          <button className="sold-btn">Vends tes articles</button>
+        </Link>
       </div>
     </header>
   );
