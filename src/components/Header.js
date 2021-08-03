@@ -2,9 +2,11 @@ import React from "react";
 import logoVinted from "../assets/img/logo-vinted.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import Toggle from "react-toggle";
+import CheckedSort from "./CheckedSort";
 
 const Header = (props) => {
-  const { token, handleLogout, search, handleSearch } = props;
+  const { token, handleLogout, search, handleSearch, sort, handleSort } = props;
 
   return (
     <header>
@@ -25,7 +27,22 @@ const Header = (props) => {
               placeholder="Rechercher des articles"
             />
           </label>
+          <span>
+            <FontAwesomeIcon icon="faArrowDown" />
+            Trier par prix:
+            <label htmlFor="">
+              <Toggle
+                defaultChecked={sort}
+                icons={{
+                  checked: <CheckedSort />,
+                  unchecked: null,
+                }}
+                onChange={handleSort}
+              />
+            </label>
+          </span>
         </div>
+
         <div>
           {token ? (
             <div>

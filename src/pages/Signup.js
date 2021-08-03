@@ -36,7 +36,8 @@ const Signup = (props) => {
     try {
       event.preventDefault();
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        // "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://fred-backend-vinted.herokuapp.com/user/signup",
         {
           email: `${email}`,
           username: `${username}`,

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory, Redirect } from "react-router-dom";
 import axios from "axios";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 const Publish = (props) => {
   const { token } = props;
@@ -9,7 +9,7 @@ const Publish = (props) => {
   const history = useHistory();
 
   const [files, setFiles] = useState({});
-  const [preview, setPreview] = useState("");
+  // const [preview, setPreview] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
@@ -19,7 +19,7 @@ const Publish = (props) => {
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
 
-  const userToken = Cookies.get("token");
+  // const userToken = Cookies.get("token");
 
   const handleFiles = (event) => {
     setFiles(event.target.files[0]);
@@ -77,7 +77,7 @@ const Publish = (props) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: "Bearer " + userToken,
+            Authorization: `Bearer ${token}`,
           },
         }
       );

@@ -2,21 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import * as qs from "qs";
 
-const Home = () => {
+const Home = (props) => {
+  const { search, sort } = props;
+
   const [offers, setOffers] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
+      const queryParams = qs.stringify({
+        title: search,
+        sort: sort ? "price-desc" : "price-asc",
+      });
       const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
+        `https://lereacteur-vinted-api.herokuapp.com/offers?${queryParams}`
       );
       setOffers(response.data.offers);
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [search, sort]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>

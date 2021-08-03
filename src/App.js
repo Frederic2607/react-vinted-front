@@ -2,7 +2,11 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faArrowDown,
+  faArrowUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
@@ -13,11 +17,12 @@ import Login from "./pages/Login";
 import Cookies from "js-cookie";
 import Publish from "./pages/Publish";
 
-library.add(faSearch);
+library.add(faSearch, faArrowDown, faArrowUp);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || "");
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState(false);
 
   const handleLogin = (token) => {
     Cookies.set("token", token);
@@ -33,6 +38,10 @@ function App() {
     setSearch(event.target.value);
   };
 
+  const handleSort = (event) => {
+    setSort(event.target.checked);
+  };
+
   return (
     <Router>
       <Header
@@ -40,11 +49,13 @@ function App() {
         handleLogout={handleLogout}
         search={search}
         handleSearch={handleSearch}
+        sort={sort}
+        handleSort={handleSort}
       />
       <Switch>
         <Route exact path="/">
-          <Headband />
-          <Home />
+          <Headband sort={sort} handleSort={handleSort} />
+          <Home search={search} sort={sort} />
         </Route>
         <Route path="/offer/:id">
           <Offer />
