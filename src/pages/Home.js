@@ -17,7 +17,8 @@ const Home = (props) => {
         sort: sort ? "price-desc" : "price-asc",
       });
       const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offers?${queryParams}`
+        // `https://lereacteur-vinted-api.herokuapp.com/offers?${queryParams}`
+        `https://fred-backend-vinted.herokuapp.com/offers/${queryParams}`
       );
       setOffers(response.data.offers);
       setIsLoading(false);

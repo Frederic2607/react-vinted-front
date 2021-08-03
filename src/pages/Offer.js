@@ -13,6 +13,7 @@ const Offer = () => {
     const fetchData = async () => {
       const response = await axios.get(
         `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+        // `https://fred-backend-vinted.herokuapp.com/offers/${id}`
       );
       setOffer(response.data);
       setIsLoading(false);
