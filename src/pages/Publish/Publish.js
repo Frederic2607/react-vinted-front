@@ -184,13 +184,14 @@ const Publish = (props) => {
                   onChange={handlePrice}
                 />
                 <div className="publish-price-checkbox">
-                  <label className="label-checkbox" for="exchange"></label>
                   <input
                     type="checkbox"
                     name="exchange"
                     id="exchange"
                     value="exchange"
+                    className="exchange"
                   />
+                  <label for="exchange"></label>
                   <span>Je suis intéressé(e) par les échanges</span>
                 </div>
               </div>

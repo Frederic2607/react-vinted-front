@@ -114,6 +114,20 @@ header .container {
   margin-right: 2rem;
 }
 
+#toggle-test .react-toggle--checked .react-toggle-track {
+  background-color: #2cb1ba;
+}
+
+#toggle-test
+  .react-toggle--checked:hover:not(.react-toggle--disabled)
+  .react-toggle-track {
+  background-color: #2cb1ba;
+}
+
+#toggle-test .react-toggle-track {
+  background-color: #2cb1ba;
+}
+
 /* ------------------------------------------------- */
 
 /* HEADBAND */
