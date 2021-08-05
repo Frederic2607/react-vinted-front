@@ -4,7 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const CheckedSort = () => {
   return (
     <div>
-      <FontAwesomeIcon icon="faArrowDown" className="toggle-checked" />
+      <FontAwesomeIcon
+        icon="sort-numeric-down"
+        className="toggle-checked-down"
+      />
     </div>
   );
 };

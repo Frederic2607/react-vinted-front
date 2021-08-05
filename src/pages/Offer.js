@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -12,10 +11,9 @@ const Offer = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-        // `https://fred-backend-vinted.herokuapp.com/offers/${id}`
+        `https://fred-backend-vinted.herokuapp.com/offer/${id}`
       );
-      setOffer(response.data);
+      setOffer(response.data.offer);
       setIsLoading(false);
     };
     fetchData();

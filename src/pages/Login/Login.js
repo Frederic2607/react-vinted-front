@@ -1,6 +1,9 @@
+import "./Login.css";
+
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const { handleLogin } = props;
@@ -39,17 +42,27 @@ const Login = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input value={email} onChange={handleEmail} placeholder="email" />
-        <input
-          type="password"
-          value={password}
-          onChange={handlePassword}
-          placeholder="password"
-        />
-        <input type="submit" value="Se Connecter"></input>
-      </form>
+    <div className="login-page">
+      <div className="login-container">
+        <h2>Se connecter</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            value={email}
+            onChange={handleEmail}
+            placeholder="Adresse email"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={handlePassword}
+            placeholder="Mot de passe"
+          />
+          <input type="submit" value="Se Connecter"></input>
+        </form>
+        <Link to="/signup" className="link-signup">
+          Pas encore de compte ? Inscris-toi !
+        </Link>
+      </div>
     </div>
   );
 };

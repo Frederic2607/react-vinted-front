@@ -1,0 +1,43 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 27.5rem;
+}
+
+.login-container > h2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form > input {
+  border: none;
+  border-bottom: solid 0.1rem #fcced3;
+  height: 3.5rem;
+  margin-bottom: 2rem;
+  outline: none;
+  font-size: 1.6rem;
+}
+
+.login-form > input:placeholder-shown {
+  opacity: 0.5;
+}
+
+.link-signup {
+  color: #2cb1ba;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  text-decoration: none;
+}

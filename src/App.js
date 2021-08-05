@@ -1,28 +1,30 @@
-import "./App.css";
+import "../src/App.css";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,
-  faArrowDown,
-  faArrowUp,
+  faSortNumericDown,
+  faSortNumericDownAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Header from "./components/Header";
-import Headband from "./components/Headband";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Signup from "./pages/Signup/Signup";
+import Login from "./pages/Login/Login";
 import Cookies from "js-cookie";
 import Publish from "./pages/Publish";
 
-library.add(faSearch, faArrowDown, faArrowUp);
+library.add(faSearch, faSortNumericDown, faSortNumericDownAlt);
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || "");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState(false);
+  const [rangeValues, setRangeValues] = useState([0, 2000]);
+  const [finalRangeValues, setFinalRangeValues] = useState([0, 2000]);
 
   const handleLogin = (token) => {
     Cookies.set("token", token);
@@ -42,6 +44,14 @@ function App() {
     setSort(event.target.checked);
   };
 
+  const handleRange = (values) => {
+    setRangeValues(values);
+  };
+
+  const handleFinalRange = (values) => {
+    setFinalRangeValues(values);
+  };
+
   return (
     <Router>
       <Header
@@ -51,11 +61,19 @@ function App() {
         handleSearch={handleSearch}
         sort={sort}
         handleSort={handleSort}
+        rangeValues={rangeValues}
+        handleRange={handleRange}
+        handleFinalRange={handleFinalRange}
       />
+
       <Switch>
         <Route exact path="/">
-          <Headband sort={sort} handleSort={handleSort} />
-          <Home search={search} sort={sort} />
+          <Home
+            search={search}
+            sort={sort}
+            rangeValues={finalRangeValues}
+            token={token}
+          />
         </Route>
         <Route path="/offer/:id">
           <Offer />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./Signup.css";
 
 const Signup = (props) => {
   const { handleLogin } = props;
@@ -64,7 +65,7 @@ const Signup = (props) => {
     <div className="signup-page">
       <div className="signup-container">
         <h2>S'inscrire</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="signup-form">
           <input
             type="text"
             placeholder="Nom d'utilisateur"
@@ -89,16 +90,23 @@ const Signup = (props) => {
             value={password}
             onChange={handlePassword}
           />
-          <input type="checkbox" />
-          <span>S'inscrire à notre newslettre</span>
-          <p>
-            En m'inscrivant je confirme avoir lu et accepté les Termes &
-            Conditions et Politique de Confidentialité de Vinted. Je confirme
-            avoir au moins 18 ans.
-          </p>
+          <div className="checkbox-container">
+            <div className="signup-checkbox">
+              <input type="checkbox" />
+              <span>S'inscrire à notre newslettre</span>
+            </div>
+            <p>
+              En m'inscrivant je confirme avoir lu et accepté les Termes &
+              Conditions et Politique de Confidentialité de Vinted. Je confirme
+              avoir au moins 18 ans.
+            </p>
+          </div>
+
           <input type="submit" value="S'inscrire"></input>
         </form>
-        <Link to="/">Tu as déjà un compte ? Connecte-toi !</Link>
+        <Link to="/login" className="link-login">
+          Tu as déjà un compte ? Connecte-toi !
+        </Link>
       </div>
     </div>
   );
