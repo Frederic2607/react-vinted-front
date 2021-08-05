@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Offer = () => {
@@ -13,7 +14,7 @@ const Offer = () => {
       const response = await axios.get(
         `https://fred-backend-vinted.herokuapp.com/offer/${id}`
       );
-      setOffer(response.data.offer);
+      setOffer(response.data);
       setIsLoading(false);
     };
     fetchData();
@@ -44,7 +45,9 @@ const Offer = () => {
             {offer.product_description}
             {offer.owner.account.username}
           </div>
-          <button>Acheter</button>
+          <Link to="/payment">
+            <button>Acheter</button>
+          </Link>
         </div>
       )}
     </div>

@@ -2,6 +2,7 @@ import "../src/App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
+import Cookies from "js-cookie";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,
@@ -14,8 +15,8 @@ import Offer from "./pages/Offer";
 import Header from "./components/Header";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
-import Cookies from "js-cookie";
 import Publish from "./pages/Publish/Publish";
+import Payment from "./pages/Payment/Payment";
 
 library.add(faSearch, faSortNumericDown, faSortNumericDownAlt);
 
@@ -86,6 +87,9 @@ function App() {
         </Route>
         <Route path="/publish">
           <Publish token={token} />
+        </Route>
+        <Route path="/payment">
+          <Payment token={token} />
         </Route>
       </Switch>
     </Router>
