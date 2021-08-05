@@ -10,7 +10,7 @@ const Publish = (props) => {
   const history = useHistory();
 
   const [files, setFiles] = useState({});
-  const [preview, setPreview] = useState("");
+  // const [preview, setPreview] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
