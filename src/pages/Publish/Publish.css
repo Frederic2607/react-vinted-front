@@ -1,0 +1,163 @@
+.publish-page {
+  background-color: #ebedee;
+}
+
+.publish-container {
+  width: 128rem;
+  margin: 0 auto;
+}
+
+.publish-container > h2 {
+  font-size: 2.4rem;
+  padding-top: 4rem;
+}
+
+form input:placeholder-shown,
+form textarea:placeholder-shown {
+  opacity: 0.5;
+}
+
+h4 {
+  font-size: 1.6rem;
+  vertical-align: baseline;
+}
+
+.publish-file-select {
+  background-color: #fff;
+  padding: 2.4rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 2px grey;
+}
+
+.publish-preview-file {
+  border: 0.1rem dashed #ebedee;
+  border-radius: 0.3rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.publish-informations {
+  background-color: #fff;
+  margin: 2rem 0;
+  box-shadow: 0 0 2px grey;
+}
+
+.publish-title {
+  display: flex;
+  justify-content: space-between;
+  height: 2.5rem;
+  padding: 2.4rem;
+  border-bottom: 0.1rem solid #ebedee;
+}
+
+.publish-title > input {
+  width: 50%;
+  border: none;
+  border-bottom: 0.1rem solid #ebedee;
+  font-size: 1.6rem;
+  outline: none;
+  padding: 0.1rem 0.2rem;
+}
+
+.publish-title > input:focus,
+.publish-text > textarea:focus,
+.publish-description-input > input:focus,
+.publish-price-subcontainer > input:focus {
+  border-bottom-color: #2cb1ba;
+}
+
+.publish-text {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2.4rem;
+}
+
+.publish-text > textarea {
+  width: 50%;
+  resize: none;
+  border: none;
+  border-bottom: 0.1rem solid #ebedee;
+  outline: none;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.publish-description,
+.publish-price {
+  background-color: #fff;
+  margin: 2rem 0;
+  box-shadow: 0 0 2px grey;
+}
+
+.publish-description > .publish-description-input:not(:last-child) {
+  height: 2.5rem;
+  border-bottom: 0.1rem solid #ebedee;
+}
+
+.publish-description-input,
+.publish-price-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem;
+}
+
+.publish-description-input input,
+.publish-price-subcontainer > input {
+  width: 50%;
+  border: none;
+  border-bottom: 0.1rem solid #ebedee;
+  font-size: 1.6rem;
+  outline: none;
+  padding: 0.1rem 0.2rem;
+}
+
+.publish-price-subcontainer {
+  width: 50%;
+}
+
+.publish-price-subcontainer > input {
+  margin-bottom: 4rem;
+}
+
+.publish-price-checkbox input {
+  display: none;
+}
+
+.publish-price-checkbox .label-checkbox {
+  border-radius: 0.3rem;
+  padding: 0.2rem 1.1rem;
+  margin: 0 1.5rem 0 0;
+  border: 0.1rem solid #000;
+  font-size: 1.4rem;
+}
+
+.publish-price-checkbox .label-design-checked {
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  margin: 0 1.5rem 0 0;
+  background-color: #0ab1ba;
+}
+
+.publish-price-checkbox > span {
+  font-size: 1.6rem;
+}
+
+.add-btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-btn {
+  background-color: #0ab1ba;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+  margin: 5rem 0;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}

@@ -15,7 +15,7 @@ import Header from "./components/Header";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Cookies from "js-cookie";
-import Publish from "./pages/Publish";
+import Publish from "./pages/Publish/Publish";
 
 library.add(faSearch, faSortNumericDown, faSortNumericDownAlt);
 
