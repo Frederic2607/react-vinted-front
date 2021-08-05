@@ -99,6 +99,7 @@ const Header = (props) => {
                     height: "15px",
                     width: "15px",
                     borderRadius: "50%",
+                    outline: "none",
                     backgroundColor: "#FFF",
                     display: "flex",
                     justifyContent: "center",

@@ -52,12 +52,6 @@ header .container {
   color: rgb(187, 187, 187);
 }
 
-.cursor {
-  border: solid 0.1rem red;
-  height: 1rem;
-  width: 5rem;
-}
-
 .logo-img {
   height: 4rem;
 }
@@ -73,10 +67,10 @@ header .container {
   height: 3rem;
   border-radius: 0.5rem;
   background-color: #fff;
-  border: rgb(44, 177, 186) solid 0.1rem;
+  border: #2cb1ba solid 0.1rem;
   outline: none;
   cursor: pointer;
-  color: rgb(44, 177, 186);
+  color: #2cb1ba;
   font-size: 1.2rem;
   padding: 0.1rem 0.6rem;
 }
@@ -96,7 +90,7 @@ header .container {
 
 .sold-btn {
   margin-left: 6rem;
-  background-color: rgb(44, 177, 186);
+  background-color: #2cb1ba;
   color: #fff;
 }
 
@@ -150,10 +144,10 @@ header .container {
 .headband-sold button {
   height: 4.5rem;
   width: 18.7rem;
-  background-color: rgb(43, 174, 183);
+  background-color: #2cb1ba;
   border-radius: 0.4rem;
   color: #fff;
-  border: rgb(44, 177, 186) solid 0.1rem;
+  border: #2cb1ba solid 0.1rem;
   outline: none;
   cursor: pointer;
   margin-top: 3.2rem;

@@ -61,7 +61,7 @@ input[type="checkbox"] {
 }
 
 input[type="submit"] {
-  background-color: rgb(44, 177, 186);
+  background-color: #2cb1ba;
   height: 4.5rem;
   width: 100%;
   border: none;

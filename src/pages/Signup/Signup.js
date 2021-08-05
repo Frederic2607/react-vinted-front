@@ -8,7 +8,7 @@ const Signup = (props) => {
   const { handleLogin } = props;
   const history = useHistory();
   const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState("");
+  const [setEmailError] = useState("");
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
