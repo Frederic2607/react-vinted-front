@@ -1,4 +1,4 @@
-import "./Publish.css";
+import "./publish.css";
 
 import { useState } from "react";
 import { useHistory, Redirect } from "react-router-dom";

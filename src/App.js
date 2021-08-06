@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Home from "./pages/Home";
-import Offer from "./pages/Offer";
+import Offer from "./pages/Offer/Offer";
 import Header from "./components/Header";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
