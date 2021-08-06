@@ -1,4 +1,4 @@
-import "./offer.css";
+import "./Offer.css";
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

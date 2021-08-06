@@ -1,11 +1,13 @@
+import "./Header.css";
+
 import React from "react";
-import logoVinted from "../assets/img/logo-vinted.png";
+import logoVinted from "../../assets/img/logo-vinted.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
-import CheckedSortDown from "./CheckedSortDown";
-import CheckedSortUp from "./CheckedSortUp";
+import CheckedSortDown from "../CheckedSortDown";
+import CheckedSortUp from "../CheckedSortUp";
 import { Range, getTrackBackground } from "react-range";
 
 const Header = (props) => {

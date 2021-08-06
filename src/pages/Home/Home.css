@@ -1,0 +1,45 @@
+.container {
+  width: 128rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+}
+
+.card-container {
+  width: 23.5rem;
+  padding: 0 0.6rem 1.6rem;
+  cursor: pointer;
+}
+
+.card-decoration {
+  text-decoration: none;
+}
+
+.card-username {
+  width: 23.5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.card-img {
+  height: 36rem;
+  width: 23.5rem;
+  object-fit: cover;
+}
+
+.card-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+}
+
+span:first-child {
+  font-size: 1.4rem;
+  color: #000;
+}
+
+span:not(:first-child) {
+  font-size: 1.2rem;
+  color: #999;
+}

@@ -1,9 +1,11 @@
+import "./Home.css";
+
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import * as qs from "qs";
-import Headband from "../components/Headband";
+import Headband from "../../components/Headband/Headband";
 
 const Home = (props) => {
   const { search, sort, rangeValues, token } = props;
@@ -37,31 +39,29 @@ const Home = (props) => {
       </div>
       <main className="container">
         {offers.map((offer, index) => (
-          <Link to={`/offer/${offer._id}`} key={index}>
-            <div>
-              <div className="card-container">
-                <div className="card-username">
-                  <span>
-                    {offer.owner &&
-                      offer.owner.account &&
-                      offer.owner.account.username}
-                  </span>
-                </div>
-                <div>
-                  <img
-                    className="card-img"
-                    src={offer.product_image.url}
-                    alt={`${offer._id}`}
-                  />
-                  <div className="card-infos">
-                    <span>{offer.product_price}</span>
-                    <span>{offer.product_details[1].TAILLE}</span>
-                    <span>{offer.product_details[0].MARQUE}</span>
-                  </div>
+          <div className="card-container">
+            <Link
+              to={`/offer/${offer._id}`}
+              key={index}
+              className="card-decoration"
+            >
+              <div className="card-username">
+                <p>{offer.owner.account.username}</p>
+              </div>
+              <div>
+                <img
+                  className="card-img"
+                  src={offer.product_image.url}
+                  alt={`${offer._id}`}
+                />
+                <div className="card-infos">
+                  <span>{offer.product_price} €</span>
+                  <span>{offer.product_details[1].TAILLE}</span>
+                  <span>{offer.product_details[0].MARQUE}</span>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </main>
     </>

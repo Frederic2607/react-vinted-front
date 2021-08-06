@@ -10,9 +10,9 @@ import {
   faSortNumericDownAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Offer from "./pages/Offer/Offer";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Publish from "./pages/Publish/Publish";

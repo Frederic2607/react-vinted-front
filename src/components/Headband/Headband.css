@@ -1,0 +1,36 @@
+.headBand-img {
+  height: 45.5rem;
+  width: 100%;
+  background-image: url(/src/assets/img/headband2.jpg);
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+}
+
+.headband-sold {
+  height: 22rem;
+  width: 36rem;
+  position: absolute;
+  top: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  padding: 2.5rem;
+  font-size: 3.4rem;
+}
+
+.headband-sold button {
+  height: 4.5rem;
+  width: 18.7rem;
+  background-color: #2cb1ba;
+  border-radius: 0.4rem;
+  color: #fff;
+  border: #2cb1ba solid 0.1rem;
+  outline: none;
+  cursor: pointer;
+  margin-top: 3.2rem;
+  padding: 0rem 1.4rem;
+  font-size: 1.6rem;
+}
