@@ -77,7 +77,7 @@ function App() {
           />
         </Route>
         <Route path="/offer/:id">
-          <Offer />
+          <Offer token={token} />
         </Route>
         <Route path="/signup">
           <Signup handleLogin={handleLogin} />

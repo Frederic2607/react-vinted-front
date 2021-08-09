@@ -39,7 +39,7 @@ span:first-child {
   color: #000;
 }
 
-span:not(:first-child) {
+.card-infos span:not(:first-child) {
   font-size: 1.2rem;
   color: #999;
 }

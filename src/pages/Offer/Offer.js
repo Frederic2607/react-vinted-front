@@ -1,15 +1,31 @@
 import "./Offer.css";
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Offer = () => {
+const Offer = ({ token }) => {
   const { id } = useParams();
+  const history = useHistory();
 
   const [offer, setOffer] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
+  const price = offer.product_price;
+  const protectionFees = (price / 10).toFixed(2);
+  const shippingFees = (protectionFees * 2).toFixed(2);
+  const total = Number(price) + Number(protectionFees) + Number(shippingFees);
+
+  const handleBuy = () => {
+    history.push("/payment", {
+      productName: offer.product_name,
+      price: offer.product_price,
+      protectionFees: protectionFees,
+      shippingFees: shippingFees,
+      totalPrice: total,
+    });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,9 +75,13 @@ const Offer = () => {
                   <span>{offer.owner.account.username}</span>
                 </div>
               </div>
-              <Link to="/payment">
-                <button>Acheter</button>
-              </Link>
+              {token ? (
+                <button onClick={handleBuy}>Acheter</button>
+              ) : (
+                <Link to="/login">
+                  <button>Acheter</button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
