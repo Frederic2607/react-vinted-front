@@ -17,10 +17,8 @@ const CheckoutForm = (props) => {
       // Récupération des infos bancaire
       const cardElement = elements.getElement(CardElement);
 
-      // Réception du toekn depuis Stripe
-      const stripeResponse = await stripe.createToken(cardElement, {
-        price: { totalPrice },
-      });
+      // Réception du token depuis Stripe
+      const stripeResponse = await stripe.createToken(cardElement);
 
       const stripeToken = stripeResponse.token.id;
 
