@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 const CheckoutForm = (props) => {
   const { totalPrice, productName, token } = props;
+
+  const location = useLocation();
 
   const [succeed, setSucceed] = useState(false);
 
@@ -18,7 +21,9 @@ const CheckoutForm = (props) => {
       const cardElement = elements.getElement(CardElement);
 
       // Réception du token depuis Stripe
-      const stripeResponse = await stripe.createToken(cardElement);
+      const stripeResponse = await stripe.createToken(cardElement, {
+        name: location.state.owner,
+      });
 
       const stripeToken = stripeResponse.token.id;
 
