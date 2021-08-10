@@ -58,7 +58,11 @@ const Payment = (props) => {
             et de port inclus).
           </p>
           <Elements stripe={stripePromise}>
-            <CheckoutForm totalPrice={totalPrice} productName={productName} />
+            <CheckoutForm
+              totalPrice={totalPrice}
+              productName={productName}
+              token={token}
+            />
           </Elements>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 
 const CheckoutForm = (props) => {
-  const { totalPrice, productName } = props;
+  const { totalPrice, productName, token } = props;
 
   const [succeed, setSucceed] = useState(false);
 
@@ -29,7 +29,8 @@ const CheckoutForm = (props) => {
           amount: totalPrice,
           productName: productName,
           stripeToken: stripeToken,
-        }
+        },
+        { headers: { authorization: "Bearer " + token } }
       );
       if (response.data.status === "succeed") {
         setSucceed(true);
